@@ -1,1 +1,1 @@
-# bcp-challenge
+# Sistema Multi-Agente para Detección de Fraude Ambiguo en Transacciones Financieras

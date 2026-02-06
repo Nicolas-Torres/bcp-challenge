@@ -1,0 +1,35 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "backend",
+    "bcp-challenge",
+    "frontend",
+]
+
+[[package]]
+name = "backend"
+version = "0.1.0"
+source = { editable = "backend" }
+
+[[package]]
+name = "bcp-challenge"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "backend" },
+    { name = "frontend" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "backend", editable = "backend" },
+    { name = "frontend", editable = "frontend" },
+]
+
+[[package]]
+name = "frontend"
+version = "0.1.0"
+source = { editable = "frontend" }

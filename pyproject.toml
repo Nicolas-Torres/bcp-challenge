@@ -1,0 +1,20 @@
+[project]
+name = "bcp-challenge"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "backend",
+    "frontend",
+]
+
+[tool.uv.workspace]
+members = [
+    "backend",
+    "frontend",
+]
+
+[tool.uv.sources]
+backend = { workspace = true }
+frontend = { workspace = true }
