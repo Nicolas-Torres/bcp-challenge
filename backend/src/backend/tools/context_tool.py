@@ -7,7 +7,7 @@ HORARIO_CRITICO = { "min_hour": 1,"max_hour": 6 }
 MONTO_EXCESIVO = 10000
 
 @tool("analizar_contexto_transaccion")
-def tool_analizar_contexto(amount: float, timestamp: str, country: str):
+def tool_analyze_context(amount: float, timestamp: str, country: str):
     """
     Analiza riesgo situacional: monto, hora (madrugada) y reputación del país.
     """
