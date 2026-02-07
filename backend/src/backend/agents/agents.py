@@ -1,5 +1,5 @@
-from backend.rag import tool_consult_policies
-from backend.history import tool_customer_history
+from backend.tools.policy_rag_tool import tool_consult_policies
+from backend.tools.history_tool import tool_customer_history
 from backend.config import CONFIG
 
 from crewai import Agent
