@@ -14,8 +14,10 @@ if not os.path.exists(envPath):
 load_dotenv(envPath, override=True)
 
 policy_path = os.getenv("POLICY_FILE_PATH")
+vector_store_path = os.getenv("VECTOR_STORE")
 
 CONFIG = {
     "open-ai-apikey": os.getenv("OPENAI_API_KEY"),
     "policy": os.path.join(project_root, policy_path),
+    "vector-store": os.path.join(project_root, vector_store_path)
 }

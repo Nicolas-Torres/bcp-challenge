@@ -10,7 +10,8 @@ docs = loader.load()
 vector_db = Chroma.from_documents(
     documents=docs, 
     embedding=OpenAIEmbeddings(),
-    collection_name="bcp_policies"
+    collection_name="bcp_policies",
+    persist_directory=CONFIG["vector-store"]
 )
 
 print(docs)
