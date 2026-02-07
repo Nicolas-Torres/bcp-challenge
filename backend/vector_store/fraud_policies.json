@@ -6,7 +6,7 @@
   },
   {
     "policy_id": "FP-02",
-    "rule": "Transacción interancional y dispositivo nuevo -> ESCALATE_TO_HUMAN",
+    "rule": "Transacción internacional y dispositivo nuevo -> ESCALATE_TO_HUMAN",
     "version": "2025.1"
   }
 ]
