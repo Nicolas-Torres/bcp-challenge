@@ -13,6 +13,9 @@ if not os.path.exists(envPath):
 
 load_dotenv(envPath, override=True)
 
+policy_path = os.getenv("POLICY_FILE_PATH")
+
 CONFIG = {
     "open-ai-apikey": os.getenv("OPENAI_API_KEY"),
+    "policy": os.path.join(project_root, policy_path),
 }
