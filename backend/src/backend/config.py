@@ -18,6 +18,6 @@ vector_store_path = os.getenv("VECTOR_STORE")
 
 CONFIG = {
     "open-ai-apikey": os.getenv("OPENAI_API_KEY"),
-    "policy": os.path.join(project_root, policy_path),
+    "policy-path": os.path.join(project_root, policy_path),
     "vector-store": os.path.join(project_root, vector_store_path)
 }

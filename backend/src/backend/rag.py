@@ -5,6 +5,7 @@ from backend.config import CONFIG
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import JSONLoader
 from langchain_chroma import Chroma
+from crewai.tools import tool
 
 vector_store = CONFIG["vector-store"]
 policy_path = CONFIG["policy-path"]
@@ -30,3 +31,14 @@ else:
         collection_name="bcp_policies",
         persist_directory=str(vector_store)
     )
+
+@tool("consult_bcp_policies")
+def tool_consult_policies(query: str):
+    """
+    Útil para consultar las normativas y políticas de fraude del BCP.
+    Usa esta herramienta cuando necesites validar si una transacción cumple las reglas.
+    Input: Una pregunta o descripción de la transacción (ej: "Monto alto en Tailandia").
+    """
+    results = vector_db.similarity_search(query, k=3)
+    
+    return "\n".join([doc.page_content for doc in results])
