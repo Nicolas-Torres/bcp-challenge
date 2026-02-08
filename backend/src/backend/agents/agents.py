@@ -19,7 +19,7 @@ context_agent = Agent(
     en un país de alto riesgo o por un monto excesivo, disparas las alarmas. Tu misión es 
     identificar si el contexto de la operación facilita un escenario de fraude.""",
     tools=[tool_analyze_context],
-    llm=llm, # El ChatOpenAI que definiste antes
+    llm=llm,
     verbose=True,
     allow_delegation=False
 )
@@ -45,4 +45,14 @@ policy_agent = Agent(
     llm=llm,
     tools=[tool_consult_policies],
     verbose=True,
+)
+
+judge_agent = Agent(
+    role='Juez Supremo de Fraude - BCP',
+    goal='Emitir un veredicto final estructurado basado en los informes de los especialistas.',
+    backstory="""Eres la autoridad máxima. Analizas los reportes de contexto, comportamiento y 
+    políticas.""",
+    llm=llm,
+    verbose=True,
+    allow_delegation=True
 )
